@@ -73,7 +73,7 @@ export const messages: Record<Locale, Messages> = {
         "Savienojam lietotni ar jūsu esošo backend sistēmu vai palīdzam izveidot jaunu, rūpīgi to testējam un parūpējamies par katru laidienu.",
       appsTitle: "Mūsu veidotās lietotnes",
       appsIntro:
-        "Daži piemēri no lietotnēm, ko esam izveidojuši iOS un Android platformām. Katru klienta projektu uzskatām par konfidenciālu, tāpēc lietotņu nosaukumus šeit neminam.",
+        "Dažas no iOS un Android lietotnēm, pie kurām esam strādājuši. Cieņā pret klientu konfidencialitāti lietotņu nosaukumi netiek publicēti.",
       contact: "Sazināties",
       cards: [
         {
@@ -135,7 +135,7 @@ export const messages: Record<Locale, Messages> = {
         "We connect your app to the backend you already have or help build a new one, test it thoroughly and take care of every release.",
       appsTitle: "Apps we have built",
       appsIntro:
-        "A few examples of apps we have built for iOS and Android. We treat every client project as confidential, so we don't mention app names here.",
+        "Some of the iOS and Android apps we've worked on. Out of respect for client confidentiality, app names are not published.",
       contact: "Get in touch",
       cards: [
         {
