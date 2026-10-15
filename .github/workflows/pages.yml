@@ -29,6 +29,7 @@ jobs:
       - run: npm run typecheck
       - run: npm run lint
       - run: npm run build
+      - run: test -d site/_next && test -f site/.nojekyll
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site
