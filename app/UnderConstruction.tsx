@@ -24,7 +24,7 @@ export function UnderConstruction({ lang }: { lang: Locale }) {
         </p>
       </main>
       <footer className="uc-footer">
-        © 2026 SIA Zappte · Reg. no. 40203749925 · Ūbeļu iela 5-53, Ādaži, Ādažu nov., LV-2164 ·{" "}
+        © 2026 SIA Zappte · Reg. no. 40203749925 · Ūbeļu iela 5-53, Ādaži, Ādažu novads, LV-2164 ·{" "}
         <a href="mailto:info@zappte.eu">info@zappte.eu</a>
       </footer>
     </div>
