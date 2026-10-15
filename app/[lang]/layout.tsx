@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import { notFound } from "next/navigation";
 import { inter } from "../fonts";
 import { isLocale, locales } from "../i18n";
-import { siteMetadata } from "../site-metadata";
+import { organizationJsonLdScript, siteMetadata } from "../site-metadata";
 import "../globals.css";
 
 export const dynamicParams = false;
@@ -33,7 +33,10 @@ export default async function LangLayout({
   if (!isLocale(lang)) notFound();
   return (
     <html lang="lv" className={inter.variable}>
-      <body>{children}</body>
+      <body>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: organizationJsonLdScript }} />
+        {children}
+      </body>
     </html>
   );
 }
