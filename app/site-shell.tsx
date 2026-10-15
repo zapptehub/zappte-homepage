@@ -54,7 +54,7 @@ function SiteHeader({ locale, page }: { locale: Locale; page?: PageId }) {
 
 function SiteFooter({ locale }: { locale: Locale }) {
   const copy = messages[locale];
-  const legalLv = "Reģ. Nr. 40203749925 · Ūbeļu iela 5-53, Ādaži, Ādažu novads, LV-2164";
+  const { registration, address } = copy.contacts;
   return (
     <footer className="uc-footer">
       <div className="uc-footer-inner">
@@ -79,8 +79,9 @@ function SiteFooter({ locale }: { locale: Locale }) {
           </span>
         </div>
         <p className="uc-legal">
-          SIA &quot;Zappte&quot; ·{" "}
-          {locale === "en" ? <span lang="lv">{legalLv}</span> : legalLv}
+          SIA &quot;Zappte&quot; · {registration}
+          {" · "}
+          {locale === "en" ? <span lang="lv">{address}</span> : address}
           {" · "}
           <a href="mailto:info@zappte.eu">info@zappte.eu</a>
         </p>
