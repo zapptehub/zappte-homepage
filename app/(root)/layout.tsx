@@ -1,9 +1,7 @@
 import type { ReactNode } from "react";
 import { inter } from "../fonts";
-import { organizationJsonLdScript, siteMetadata } from "../site-metadata";
+import { organizationJsonLdScript } from "../site-metadata";
 import "../globals.css";
-
-export const metadata = siteMetadata("lv");
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (

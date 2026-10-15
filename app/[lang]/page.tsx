@@ -1,9 +1,21 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { HomePage } from "../home-page";
 import { isLocale } from "../i18n";
-import { UnderConstruction } from "../UnderConstruction";
+import { siteMetadata } from "../site-metadata";
 
-export default async function HomePage({ params }: { params: Promise<{ lang: string }> }) {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
   const { lang } = await params;
   if (!isLocale(lang)) notFound();
-  return <UnderConstruction />;
+  return siteMetadata(lang, "home");
+}
+
+export default async function HomeLangPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  if (!isLocale(lang)) notFound();
+  return <HomePage locale={lang} />;
 }

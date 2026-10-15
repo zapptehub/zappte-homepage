@@ -10,6 +10,10 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   basePath,
   assetPrefix: basePath || undefined,
+  // Two root layouts (LV and EN). The unmatched-route 404 cannot sit inside either one.
+  experimental: {
+    globalNotFound: true,
+  },
 };
 
 export default nextConfig;

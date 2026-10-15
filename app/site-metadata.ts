@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import type { Locale } from "./i18n";
+import type { Locale, PageId } from "./i18n";
+import { messages } from "./i18n";
 
 export const organizationJsonLd = {
   "@context": "https://schema.org",
@@ -30,22 +31,35 @@ export const organizationJsonLdScript = JSON.stringify(organizationJsonLd)
   .replaceAll(">", "\\u003e")
   .replaceAll("&", "\\u0026");
 
-const canonical = {
-  lv: "https://zappte.eu/",
-  en: "https://zappte.eu/en/",
-} as const satisfies Record<Locale, string>;
+/** Absolute URLs for each page pair. Latvian canonicals are unprefixed, including for `/lv/…` mirrors. */
+export const pageUrls = {
+  home: {
+    lv: "https://zappte.eu/",
+    en: "https://zappte.eu/en/",
+  },
+  contacts: {
+    lv: "https://zappte.eu/kontakti/",
+    en: "https://zappte.eu/en/contacts/",
+  },
+} as const satisfies Record<PageId, Record<Locale, string>>;
 
-export function siteMetadata(locale: Locale): Metadata {
+/** Canonical + hreflang for a page pair. x-default is the Latvian URL. */
+export function pageAlternates(locale: Locale, page: PageId): NonNullable<Metadata["alternates"]> {
+  const urls = pageUrls[page];
+  return {
+    canonical: urls[locale],
+    languages: {
+      lv: urls.lv,
+      en: urls.en,
+      "x-default": urls.lv,
+    },
+  };
+}
+
+export function siteMetadata(locale: Locale, page: PageId): Metadata {
   return {
     metadataBase: new URL("https://zappte.eu"),
-    title: "zAPPte — Lapa top",
-    alternates: {
-      canonical: canonical[locale],
-      languages: {
-        lv: "https://zappte.eu/",
-        en: "https://zappte.eu/en/",
-        "x-default": "https://zappte.eu/",
-      },
-    },
+    title: messages[locale].titles[page],
+    alternates: pageAlternates(locale, page),
   };
 }
