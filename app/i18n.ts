@@ -66,9 +66,9 @@ export const messages: Record<Locale, Messages> = {
     },
     nav: { home: "Sākums", contacts: "Kontakti" },
     home: {
-      eyebrow: "Kopš 2013. gada",
+      eyebrow: "Pieredze kopš 2013. gada",
       title: "Veidojam iOS un Android lietotnes",
-      body: "Zappte jau vairāk nekā 10 gadus izstrādā mobilās lietotnes iOS un Android platformām — no pirmās idejas līdz publicēšanai App Store un Google Play.",
+      body: "Zappte vada izstrādātājs ar vairāk nekā 10 gadu pieredzi iOS un Android lietotņu izstrādē — no pirmās idejas līdz publicēšanai App Store un Google Play.",
       detail:
         "Savienojam lietotni ar jūsu esošo backend sistēmu vai palīdzam izveidot jaunu, rūpīgi to testējam un parūpējamies par katru laidienu.",
       appsTitle: "Mūsu veidotās lietotnes",
@@ -94,7 +94,7 @@ export const messages: Record<Locale, Messages> = {
         {
           id: "insurance",
           title: "Auto apdrošināšanas lietotne ar auto ekrāna versiju",
-          description: "Polises un atlīdzības pieteikumi telefonā, kā arī CarPlay un Android Auto versija.",
+          description: "Polises un atlīdzības pieteikumi telefonā, kā arī versija automašīnas ekrānam ar Android Automotive.",
         },
         {
           id: "utility",
@@ -128,9 +128,9 @@ export const messages: Record<Locale, Messages> = {
     },
     nav: { home: "Home", contacts: "Contacts" },
     home: {
-      eyebrow: "Since 2013",
+      eyebrow: "Experience since 2013",
       title: "We built iOS and Android apps",
-      body: "Zappte has been developing mobile apps for iOS and Android for more than 10 years — from first idea to release on the App Store and Google Play.",
+      body: "Zappte is led by a developer with more than 10 years of iOS and Android experience, from first idea to release on the App Store and Google Play.",
       detail:
         "We connect your app to the backend you already have or help build a new one, test it thoroughly and take care of every release.",
       appsTitle: "Apps we have built",
@@ -156,7 +156,7 @@ export const messages: Record<Locale, Messages> = {
         {
           id: "insurance",
           title: "Car insurance app with in-car companion",
-          description: "Policies and claims on the phone, plus a CarPlay / Android Auto companion.",
+          description: "Policies and claims on the phone, plus an in-car version for Android Automotive.",
         },
         {
           id: "utility",
