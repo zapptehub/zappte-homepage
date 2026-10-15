@@ -1,0 +1,78 @@
+/* Design tokens from design-spec.md (Zappte Web UI/UX Designer). Dark mode is CSS-only via prefers-color-scheme. */
+:root {
+  /* Primitives */
+  --raspberry-50:#FDEBF0; --raspberry-100:#FAD0DC; --raspberry-200:#F5A3BA; --raspberry-300:#EF7697; --raspberry-400:#E9527C;
+  --raspberry-500:#E43865; --raspberry-600:#C82552; --raspberry-700:#A31C42; --raspberry-800:#7D1633; --raspberry-900:#561024;
+  --gold-50:#FEF8EF; --gold-100:#FDEED9; --gold-200:#FBDDB3; --gold-300:#F9CC8E; --gold-400:#F7BF75;
+  --gold-500:#F6B561; --gold-600:#E0973A; --gold-700:#B87425; --gold-800:#8A561C; --gold-900:#5C3913;
+  --neutral-0:#FDFDFD; --neutral-50:#F7F5F5; --neutral-100:#EEEBEB; --neutral-200:#DDD8D8; --neutral-300:#C4BDBE; --neutral-400:#A39A9B;
+  --neutral-500:#817778; --neutral-600:#625859; --neutral-700:#4A4142; --neutral-800:#362E2F; --neutral-900:#2B2425; --neutral-950:#251E1F;
+  --green-100:#DDF5E7; --green-300:#6FD39A; --green-700:#1E7A47; --green-900:#0F3D24;
+  --amber-100:#FFF1D6; --amber-300:#F5C063; --amber-700:#8F5400; --amber-900:#4A2C00;
+  --red-100:#FDE2E2;   --red-300:#FF8F8F;   --red-700:#B42318;   --red-900:#5C1410;
+  --blue-100:#DDE9FF;  --blue-300:#8AB4FF;  --blue-700:#1F5FBF;  --blue-900:#0F2F60;
+  --base-white:#FFFFFF;
+
+  /* Semantic — Light (default) */
+  --color-bg-default: var(--neutral-0);      --color-bg-subtle: var(--neutral-50);   --color-bg-inverse: var(--neutral-950);
+  --color-surface-raised: var(--base-white);
+  --color-text-primary: var(--neutral-950);  --color-text-secondary: var(--neutral-600);
+  --color-text-on-brand: var(--neutral-0);   --color-text-on-accent: var(--neutral-950); --color-text-inverse: var(--neutral-0);
+  --color-text-link: var(--raspberry-600);   --color-text-disabled: var(--neutral-400);
+  --color-border-default: var(--neutral-200); --color-border-strong: var(--neutral-500);
+  --color-brand-primary: var(--raspberry-600); --color-brand-primary-hover: var(--raspberry-700); --color-brand-primary-pressed: var(--raspberry-800);
+  --color-brand-subtle: var(--raspberry-50); --color-brand-logo: var(--raspberry-500);
+  --color-accent: var(--gold-500);           --color-accent-subtle: var(--gold-100);
+  --color-focus-ring: var(--raspberry-600);  --color-disabled-bg: var(--neutral-100);
+  --color-status-success: var(--green-700); --color-status-success-bg: var(--green-100);
+  --color-status-warning: var(--amber-700); --color-status-warning-bg: var(--amber-100);
+  --color-status-error: var(--red-700);     --color-status-error-bg: var(--red-100);
+  --color-status-info: var(--blue-700);     --color-status-info-bg: var(--blue-100);
+
+  /* Spacing */
+  --space-4:4px; --space-8:8px; --space-12:12px; --space-16:16px; --space-24:24px; --space-32:32px; --space-48:48px; --space-64:64px;
+  /* Radius */
+  --radius-sm:4px; --radius-md:8px; --radius-lg:12px; --radius-xl:16px; --radius-full:9999px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg-default: var(--neutral-950);    --color-bg-subtle: var(--neutral-900);  --color-bg-inverse: var(--neutral-0);
+    --color-surface-raised: var(--neutral-800);
+    --color-text-primary: var(--neutral-0);    --color-text-secondary: var(--neutral-300);
+    --color-text-on-brand: var(--neutral-950); --color-text-on-accent: var(--neutral-950); --color-text-inverse: var(--neutral-950);
+    --color-text-link: var(--raspberry-300);   --color-text-disabled: var(--neutral-500);
+    --color-border-default: var(--neutral-700); --color-border-strong: var(--neutral-400);
+    --color-brand-primary: var(--raspberry-400); --color-brand-primary-hover: var(--raspberry-300); --color-brand-primary-pressed: var(--raspberry-200);
+    --color-brand-subtle: var(--raspberry-900); --color-brand-logo: var(--raspberry-500);
+    --color-accent: var(--gold-400);           --color-accent-subtle: var(--gold-900);
+    --color-focus-ring: var(--gold-400);       --color-disabled-bg: var(--neutral-800);
+    --color-status-success: var(--green-300); --color-status-success-bg: var(--green-900);
+    --color-status-warning: var(--amber-300); --color-status-warning-bg: var(--amber-900);
+    --color-status-error: var(--red-300);     --color-status-error-bg: var(--red-900);
+    --color-status-info: var(--blue-300);     --color-status-info-bg: var(--blue-900);
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { color-scheme: light dark; }
+body {
+  margin: 0;
+  font-family: var(--font-inter), system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  background: var(--color-bg-default);
+  color: var(--color-text-primary);
+}
+a { color: var(--color-text-link); }
+a:focus-visible { outline: 3px solid var(--color-focus-ring); outline-offset: 2px; }
+main { max-width: 1040px; margin: 0 auto; padding: var(--space-64) var(--space-24); }
+
+/* Under construction */
+.uc { min-height: 100vh; display: flex; flex-direction: column; }
+.uc-main { flex: 1; display: flex; flex-direction: column; justify-content: center; text-align: center; }
+.uc-logo { font-size: 56px; font-weight: 800; letter-spacing: -0.02em; color: var(--color-brand-logo); margin: 0 0 var(--space-24); }
+.uc-logo span { color: var(--color-brand-primary); }
+.uc h1 { font-size: 36px; margin: 0 0 var(--space-12); }
+.uc-body { color: var(--color-text-secondary); margin: 0 0 var(--space-24); }
+.uc-footer { border-top: 1px solid var(--color-border-default); padding: var(--space-24); text-align: center; font-size: 14px; color: var(--color-text-secondary); }
