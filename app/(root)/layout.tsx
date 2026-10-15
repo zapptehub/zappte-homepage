@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import { inter } from "../fonts";
 import "../globals.css";
 
-export const metadata: Metadata = { title: "zAPPte — Mājaslapa top" };
+export const metadata: Metadata = { title: "zAPPte — Lapa top" };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (

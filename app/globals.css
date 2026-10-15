@@ -58,21 +58,154 @@
 html { color-scheme: light dark; }
 body {
   margin: 0;
-  font-family: var(--font-inter), system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-family: var(--font-inter-latin), var(--font-inter-ext), system-ui, -apple-system, "Segoe UI", sans-serif;
   font-size: 18px;
   line-height: 1.6;
   background: var(--color-bg-default);
   color: var(--color-text-primary);
 }
 a { color: var(--color-text-link); }
-a:focus-visible { outline: 3px solid var(--color-focus-ring); outline-offset: 2px; }
-main { max-width: 1040px; margin: 0 auto; padding: var(--space-64) var(--space-24); }
+a:focus-visible { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
 
-/* Under construction */
-.uc { min-height: 100vh; display: flex; flex-direction: column; }
-.uc-main { flex: 1; display: flex; flex-direction: column; justify-content: center; text-align: center; }
-.uc-logo { font-size: 56px; font-weight: 800; letter-spacing: -0.02em; color: var(--color-brand-logo); margin: 0 0 var(--space-24); }
-.uc-logo span { color: var(--color-brand-primary); }
-.uc h1 { font-size: 36px; margin: 0 0 var(--space-12); }
-.uc-body { color: var(--color-text-secondary); margin: 0 0 var(--space-24); }
-.uc-footer { border-top: 1px solid var(--color-border-default); padding: var(--space-24); text-align: center; font-size: 14px; color: var(--color-text-secondary); }
+/* Under construction — hero fills the viewport (min 640 mobile / 800 desktop); footer stays at the bottom. */
+.uc {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: var(--color-bg-default);
+}
+
+.uc-hero {
+  box-sizing: border-box;
+  flex: 1;
+  min-height: 640px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-24);
+  padding: var(--space-48) var(--space-16);
+  background: var(--color-bg-default);
+  text-align: center;
+  hyphens: auto;
+}
+.uc-logo { width: 112px; height: 112px; flex-shrink: 0; }
+.uc-bar {
+  width: 48px;
+  height: 4px;
+  flex-shrink: 0;
+  border-radius: 2px;
+  background: var(--color-accent);
+}
+.uc-lv,
+.uc-en {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: min(100%, 328px);
+  text-align: center;
+}
+.uc-lv { gap: var(--space-16); }
+.uc-en { gap: var(--space-8); }
+.uc-hero h1,
+.uc-hero h2,
+.uc-hero p { margin: 0; max-width: 100%; }
+.uc-hero h1 {
+  font-size: 48px;
+  line-height: 56px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: var(--color-brand-primary);
+}
+.uc-lv p {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  color: var(--color-text-primary);
+}
+.uc-en h2 {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--color-text-secondary);
+}
+.uc-en p {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+}
+.uc-rule {
+  width: 160px;
+  height: 1px;
+  flex-shrink: 0;
+  background: var(--color-border-default);
+}
+
+.uc-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-24);
+  box-sizing: border-box;
+  padding: var(--space-48) var(--space-16);
+  background: var(--color-bg-inverse);
+  color: var(--color-text-inverse);
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}
+.uc-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  flex-shrink: 0;
+}
+.uc-brand p,
+.uc-legal { margin: 0; }
+.uc-flags { display: flex; gap: 6px; align-items: center; }
+.uc-flag {
+  display: block;
+  flex-shrink: 0;
+  border-radius: 1px;
+  overflow: hidden;
+}
+.uc-footer a {
+  color: var(--color-text-link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+.uc-footer a:hover { color: var(--color-brand-primary-hover); }
+.uc-footer a:focus-visible {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .uc-footer {
+    background: var(--color-bg-subtle);
+    color: var(--color-text-secondary);
+  }
+}
+
+@media (min-width: 1024px) {
+  .uc-hero {
+    min-height: 800px;
+    padding: var(--space-64);
+    gap: var(--space-32);
+  }
+  .uc-logo { width: 160px; height: 160px; }
+  .uc-lv,
+  .uc-en { width: min(100%, 720px); }
+  .uc-rule { width: 240px; }
+  .uc-footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-64);
+  }
+}

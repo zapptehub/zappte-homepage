@@ -11,7 +11,7 @@ export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
 }
 
-export const metadata: Metadata = { title: "zAPPte — Mājaslapa top / Website under construction" };
+export const metadata: Metadata = { title: "zAPPte — Lapa top" };
 
 export default async function LangLayout({
   children,
@@ -23,7 +23,7 @@ export default async function LangLayout({
   const { lang } = await params;
   if (!isLocale(lang)) notFound();
   return (
-    <html lang={lang} className={inter.variable}>
+    <html lang="lv" className={inter.variable}>
       <body>{children}</body>
     </html>
   );
