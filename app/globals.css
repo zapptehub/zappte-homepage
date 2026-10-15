@@ -19,6 +19,8 @@
   --color-text-primary: var(--neutral-950);  --color-text-secondary: var(--neutral-600);
   --color-text-on-brand: var(--neutral-0);   --color-text-on-accent: var(--neutral-950); --color-text-inverse: var(--neutral-0);
   --color-text-link: var(--raspberry-600);   --color-text-disabled: var(--neutral-400);
+  --color-text-link-on-inverse: var(--raspberry-300); --color-text-link-on-inverse-hover: var(--raspberry-200);
+  --color-focus-ring-on-inverse: var(--raspberry-200);
   --color-border-default: var(--neutral-200); --color-border-strong: var(--neutral-500);
   --color-brand-primary: var(--raspberry-600); --color-brand-primary-hover: var(--raspberry-700); --color-brand-primary-pressed: var(--raspberry-800);
   --color-brand-subtle: var(--raspberry-50); --color-brand-logo: var(--raspberry-500);
@@ -42,6 +44,8 @@
     --color-text-primary: var(--neutral-0);    --color-text-secondary: var(--neutral-300);
     --color-text-on-brand: var(--neutral-950); --color-text-on-accent: var(--neutral-950); --color-text-inverse: var(--neutral-950);
     --color-text-link: var(--raspberry-300);   --color-text-disabled: var(--neutral-500);
+    --color-text-link-on-inverse: var(--raspberry-300); --color-text-link-on-inverse-hover: var(--raspberry-200);
+    --color-focus-ring-on-inverse: var(--raspberry-200);
     --color-border-default: var(--neutral-700); --color-border-strong: var(--neutral-400);
     --color-brand-primary: var(--raspberry-400); --color-brand-primary-hover: var(--raspberry-300); --color-brand-primary-pressed: var(--raspberry-200);
     --color-brand-subtle: var(--raspberry-900); --color-brand-logo: var(--raspberry-500);
@@ -174,14 +178,15 @@ a:focus-visible { outline: 2px solid var(--color-focus-ring); outline-offset: 2p
   overflow: hidden;
 }
 .uc-footer a {
-  color: var(--color-text-link);
+  color: var(--color-text-link-on-inverse);
   text-decoration: underline;
   text-underline-offset: 2px;
   border-radius: var(--radius-sm);
 }
-.uc-footer a:hover { color: var(--color-brand-primary-hover); }
+.uc-footer a:hover,
+.uc-footer a:focus-visible { color: var(--color-text-link-on-inverse-hover); }
 .uc-footer a:focus-visible {
-  outline: 2px solid var(--color-focus-ring);
+  outline: 2px solid var(--color-focus-ring-on-inverse);
   outline-offset: 2px;
 }
 

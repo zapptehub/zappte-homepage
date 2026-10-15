@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { inter } from "../fonts";
+import { siteMetadata } from "../site-metadata";
 import "../globals.css";
 
-export const metadata: Metadata = { title: "zAPPte — Lapa top" };
+export const metadata = siteMetadata("lv");
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
