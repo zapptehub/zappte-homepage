@@ -17,8 +17,6 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      BASE_PATH: /zappte-homepage # remove when zappte.eu DNS points to Pages (and re-add public/CNAME)
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -29,7 +27,7 @@ jobs:
       - run: npm run typecheck
       - run: npm run lint
       - run: npm run build
-      - run: test -d site/_next && test -f site/.nojekyll
+      - run: test -d site/_next && test -f site/.nojekyll && grep -qx zappte.eu site/CNAME
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site
